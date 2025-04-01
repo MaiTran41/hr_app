@@ -1,0 +1,13 @@
+.person-block {
+  background-color: rgb(201, 91, 55);
+  /* margin: 1rem; */
+  border-radius: 12px;
+  padding: 1rem;
+  aspect-ratio: 4/3;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
