@@ -1,8 +1,12 @@
+import "./Header.css";
+
 const Header = () => {
-    return (
-        <>
+  return (
+    <>
+      <div id="nav-bar">
         <h1>HR APP</h1>
-        </>
-    )
-}
-export default Header
+      </div>
+    </>
+  );
+};
+export default Header;
