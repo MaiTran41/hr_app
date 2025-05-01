@@ -196,7 +196,7 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
           </div>
-          <button id="add-employee-btn">Add Employee</button>
+          <button id="add-employee-btn">Add</button>
         </div>
       </form>
       <Footer year={2025} />
