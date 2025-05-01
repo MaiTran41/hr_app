@@ -3,7 +3,7 @@ import Footer from "../components/Footer/Footer";
 import { useState } from "react";
 import "../components/Person/Person.css";
 
-const AddEmployee = () => {
+const AddEmployee = ({ onAddEmployee }) => {
   const [formData, setFormData] = useState({
     name: "",
     title: "",
@@ -14,19 +14,49 @@ const AddEmployee = () => {
     startDate: "",
     location: "",
     department: "",
-    skills: "",
+    skills: [],
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    // since  'skills' input is a text input aka strings, we want it to be an array
+    // we need to use .split('') to turn inputs into an array
+
+    const formattedValue = name === "skills" ? value.split(",") : value;
+
+    setFormData((prev) => ({ ...prev, [name]: formattedValue }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newEmployee = {
+      ...formData,
+    };
+
+    onAddEmployee(newEmployee);
+
+    console.log(newEmployee);
+
+    setFormData({
+      name: "",
+      title: "",
+      salary: "",
+      phone: "",
+      email: "",
+      animal: "",
+      startDate: "",
+      location: "",
+      department: "",
+      skills: [],
+    });
   };
 
   return (
     <>
       <Header logo="Mai Tran" />
-      <form action="submit" id="form-container">
+      <form id="form-container" onSubmit={handleSubmit}>
         <h1>Add Employee Form</h1>
 
         <div id="form-input-container">

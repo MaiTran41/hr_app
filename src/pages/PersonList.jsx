@@ -3,13 +3,13 @@ import { employees } from "../data/employeeData";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
-const PersonList = () => {
+const PersonList = ({ employeesData, setEmployeesData }) => {
   return (
     <>
       <Header logo="Mai Tran"></Header>
       <h2>Employee List</h2>
       <div className="employee-card-container">
-        {employees.map((employee) => (
+        {employeesData.map((employee) => (
           <PersonCard key={employee.id} {...employee} />
         ))}
       </div>
