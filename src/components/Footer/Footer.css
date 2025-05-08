@@ -1,0 +1,19 @@
+#footer-container {
+  background-color: #ebebbc;
+  color: #175a4e;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+#nav-bar-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+}

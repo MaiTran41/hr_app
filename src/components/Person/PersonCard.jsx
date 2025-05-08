@@ -1,5 +1,5 @@
 import "./Person.css";
-import { emojisMap } from "./emojisMap";
+import { emojisMap } from "../../data/emojisMap";
 
 const calculateWorkingYears = (startDateStr) => {
   const today = new Date();

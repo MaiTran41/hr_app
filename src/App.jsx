@@ -1,18 +1,33 @@
-import './App.css'
-import Header from './Header'
-import Footer from './Footer'
-import PersonList from './PersonList'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import PersonList from "./pages/PersonList.jsx";
+import About from "./pages/About.jsx";
+import AddEmployee from "./pages/AddEmployee.jsx";
+import { employees } from "./data/employeeData.js";
+import { useState } from "react";
 
 function App() {
-  return (
-    <>
-      <Header />
-      <main>
-       <PersonList />
-      </main>
-      <Footer />
-    </>
-  )
+  const [employeesData, setEmployeesData] = useState(employees);
+
+  const addEmployeeHandler = (newEmployee) => {
+    setEmployeesData((prev) => [...prev, { ...newEmployee, id: Date.now() }]);
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <PersonList employeesData={employeesData} />,
+    },
+    {
+      path: "/about",
+      element: <About />,
+    },
+    {
+      path: "/add",
+      element: <AddEmployee onAddEmployee={addEmployeeHandler} />,
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
