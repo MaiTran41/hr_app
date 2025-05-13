@@ -2,7 +2,7 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { useState } from "react";
 import "../components/Person/Person.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import axios from "axios";
 
 const AddEmployee = ({ onAddEmployee }) => {
@@ -46,25 +46,25 @@ const AddEmployee = ({ onAddEmployee }) => {
       );
 
       onAddEmployee(res.data);
+
+      navigate("/");
+
+      setFormData({
+        name: "",
+        title: "",
+        salary: "",
+        phone: "",
+        email: "",
+        animal: "",
+        startDate: "",
+        location: "",
+        department: "",
+        skills: [],
+      });
     } catch (err) {
       console.error("Fetch error", err);
       return;
     }
-
-    setFormData({
-      name: "",
-      title: "",
-      salary: "",
-      phone: "",
-      email: "",
-      animal: "",
-      startDate: "",
-      location: "",
-      department: "",
-      skills: [],
-    });
-
-    navigate("/");
   };
 
   return (

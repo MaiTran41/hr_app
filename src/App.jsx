@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import "./App.css";
 import PersonList from "./pages/PersonList.jsx";
 import About from "./pages/About.jsx";
@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   const addEmployeeHandler = (newEmployee) => {
-    setEmployeesData((prev) => [...prev, { ...newEmployee, id: Date.now() }]);
+    setEmployeesData((prev) => [...prev, newEmployee]);
   };
 
   const router = createBrowserRouter([
