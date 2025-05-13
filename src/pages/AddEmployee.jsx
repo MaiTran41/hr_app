@@ -2,7 +2,8 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { useState } from "react";
 import "../components/Person/Person.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
+import axios from "axios";
 
 const AddEmployee = ({ onAddEmployee }) => {
   const [formData, setFormData] = useState({
@@ -31,31 +32,39 @@ const AddEmployee = ({ onAddEmployee }) => {
     setFormData((prev) => ({ ...prev, [name]: formattedValue }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newEmployee = {
       ...formData,
     };
 
-    onAddEmployee(newEmployee);
+    try {
+      const res = await axios.post(
+        "http://localhost:3001/employees",
+        newEmployee
+      );
 
-    console.log(newEmployee);
+      onAddEmployee(res.data);
 
-    setFormData({
-      name: "",
-      title: "",
-      salary: "",
-      phone: "",
-      email: "",
-      animal: "",
-      startDate: "",
-      location: "",
-      department: "",
-      skills: [],
-    });
+      navigate("/");
 
-    navigate("/");
+      setFormData({
+        name: "",
+        title: "",
+        salary: "",
+        phone: "",
+        email: "",
+        animal: "",
+        startDate: "",
+        location: "",
+        department: "",
+        skills: [],
+      });
+    } catch (err) {
+      console.error("Fetch error", err);
+      return;
+    }
   };
 
   return (

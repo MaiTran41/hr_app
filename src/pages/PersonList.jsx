@@ -1,6 +1,7 @@
 import PersonCard from "../components/Person/PersonCard";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import { useEffect, useState } from "react";
 
 const PersonList = ({ employeesData, setEmployeesData }) => {
   return (

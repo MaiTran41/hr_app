@@ -40,25 +40,37 @@ const shouldRenderProbationMsg = (startDate) => {
   return isWithinSixMonths(startDate, today);
 };
 
-const PersonCard = (props) => {
+const PersonCard = ({
+  id,
+  name,
+  title,
+  salary,
+  phone,
+  email,
+  animal,
+  startDate,
+  location,
+  department,
+  skills,
+}) => {
   return (
     <div className="person-block">
-      <p>ID: {props.id}</p>
-      <p>Name: {props.name}</p>
-      <p>Title: {props.title}</p>
-      <p>Salary: {props.salary}€</p>
-      <p>Phone: {props.phone}</p>
-      <p>Email: {props.email}</p>
-      <p>Animal: {emojisMap[props.animal.toLowerCase()]}</p>
-      <p>Start Date: {props.startDate}</p>
-      <p>Location: {props.location}</p>
-      <p>Department: {props.department}</p>
-      <p>Skills: {props.skills.join(", ")}</p>
+      <p>ID: {id}</p>
+      <p>Name: {name}</p>
+      <p>Title: {title}</p>
+      <p>Salary: {salary}€</p>
+      <p>Phone: {phone}</p>
+      <p>Email: {email}</p>
+      <p>Animal: {emojisMap[animal.toLowerCase()]}</p>
+      <p>Start Date: {startDate}</p>
+      <p>Location: {location}</p>
+      <p>Department: {department}</p>
+      <p>Skills: {skills.join(", ")}</p>
 
-      {shouldRenderRecognitionMsg(props.startDate) && (
+      {shouldRenderRecognitionMsg(startDate) && (
         <p>🎉 Schedule recognition meeting</p>
       )}
-      {shouldRenderProbationMsg(props.startDate) && (
+      {shouldRenderProbationMsg(startDate) && (
         <p>🔔 Schedule probation review</p>
       )}
     </div>
