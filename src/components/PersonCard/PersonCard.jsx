@@ -1,5 +1,6 @@
 import "./PersonCard.css";
 import { emojisMap } from "../../data/emojisMap";
+import { useState } from "react";
 
 const calculateWorkingYears = (startDateStr) => {
   const today = new Date();
@@ -53,12 +54,28 @@ const PersonCard = ({
   department,
   skills,
 }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [newSalary, setNewSalary] = useState(salary);
+
+  const handleEditFields = () => {};
+
   return (
     <div className="person-block">
       <p>ID: {id}</p>
       <p>Name: {name}</p>
       <p>Title: {title}</p>
-      <p>Salary: {salary}€</p>
+      {/* <p>Salary: {salary}€</p> */}
+
+      {isEditing ? (
+        <input
+          type="number"
+          value={newSalary}
+          onChange={(e) => setNewSalary(e.target.value)}
+        />
+      ) : (
+        <p>Salary: {salary}€</p>
+      )}
+
       <p>Phone: {phone}</p>
       <p>Email: {email}</p>
       <p>Animal: {emojisMap[animal.toLowerCase()]}</p>
@@ -72,6 +89,15 @@ const PersonCard = ({
       )}
       {shouldRenderProbationMsg(startDate) && (
         <p>🔔 Schedule probation review</p>
+      )}
+
+      {isEditing ? (
+        <>
+          <button onClick={() => setIsEditing(!isEditing)}>Save</button>
+          <button onClick={() => setIsEditing(!isEditing)}>Cancel</button>
+        </>
+      ) : (
+        <button onClick={() => setIsEditing(!isEditing)}>Edit</button>
       )}
     </div>
   );
