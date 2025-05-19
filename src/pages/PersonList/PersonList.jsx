@@ -1,12 +1,10 @@
-import PersonCard from "../components/Person/PersonCard";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import { useEffect, useState } from "react";
+import "../PersonList/PersonList.css";
+import PersonCard from "../../components/PersonCard/PersonCard";
 
 const PersonList = ({ employeesData, setEmployeesData }) => {
   return (
     <>
-      <Header logo="Mai Tran"></Header>
       <div className="employee-list-container">
         <h2>Employee List</h2>
         <div className="employee-list-wrapper">
@@ -15,7 +13,6 @@ const PersonList = ({ employeesData, setEmployeesData }) => {
           ))}
         </div>
       </div>
-      <Footer year={2025}></Footer>
     </>
   );
 };

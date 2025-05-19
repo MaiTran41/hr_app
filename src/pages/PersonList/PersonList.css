@@ -1,0 +1,17 @@
+.employee-list-container h2 {
+  font-size: 36px;
+}
+
+.employee-list-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.employee-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}

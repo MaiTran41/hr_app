@@ -1,4 +1,4 @@
-import "./Person.css";
+import "./PersonCard.css";
 import { emojisMap } from "../../data/emojisMap";
 
 const calculateWorkingYears = (startDateStr) => {

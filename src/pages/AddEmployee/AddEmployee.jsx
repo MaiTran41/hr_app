@@ -1,7 +1,5 @@
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import { useState } from "react";
-import "../components/Person/Person.css";
+import "../AddEmployee/AddEmployee.css";
 import { useNavigate } from "react-router";
 import axios from "axios";
 
@@ -69,7 +67,6 @@ const AddEmployee = ({ onAddEmployee }) => {
 
   return (
     <>
-      <Header logo="Mai Tran" />
       <form id="form-container" onSubmit={handleSubmit}>
         <h1>Add Employee Form</h1>
 
@@ -208,7 +205,6 @@ const AddEmployee = ({ onAddEmployee }) => {
           <button id="add-employee-btn">Add</button>
         </div>
       </form>
-      <Footer year={2025} />
     </>
   );
 };

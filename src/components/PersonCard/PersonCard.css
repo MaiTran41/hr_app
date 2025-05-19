@@ -10,26 +10,8 @@
   align-items: center;
   gap: 0.5rem;
 }
-.employee-list-container h2 {
-  font-size: 36px;
-}
 
-.employee-list-container {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.employee-list-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* align-items: center; */
-  gap: 20px;
-}
-
-#form-container {
+/* #form-container {
   background-color: #eb9896;
   color: #175a4e;
   padding: 28px;
@@ -80,4 +62,4 @@
 .label-wrapper {
   min-width: 100px;
   text-align: left;
-}
+} */
