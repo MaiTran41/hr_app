@@ -1,22 +1,29 @@
-#form-container {
+.formContainer {
   background-color: #eb9896;
   color: #175a4e;
   padding: 28px;
-}
-
-#form-input-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.formInputContainer {
+  background-color: #ffeeee;
+  width: 400px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: auto;
 }
 
-.form-inputs {
+.formInputs {
   display: flex;
   margin: 1.15rem;
 }
 
-.form-inputs input {
+.formInputs input {
   color: #175a4e;
   font-family: inherit;
   border-radius: 5px;
@@ -46,7 +53,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.label-wrapper {
+.labelWrapper {
   min-width: 100px;
-  text-align: left;
+  text-align: lexft;
 }

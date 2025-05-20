@@ -1,21 +1,25 @@
-import "./Footer.css";
 import { NavLink } from "react-router";
+import styles from "../Footer/Footer.module.css";
 
 const Footer = ({ year }) => {
+  const getLinkClassname = ({ isActive }) => {
+    return isActive ? `${styles.navLinks} ${styles.active}` : styles.navLinks;
+  };
+
   return (
     <>
-      <footer id="footer-container">
+      <footer className={styles.footerContainer}>
         <p>Copyright© Mai Tran {year}</p>
 
-        <nav id="nav-bar-container">
-          <ul id="nav-bar-footer">
-            <NavLink to="/" className="nav-links">
+        <nav className={styles.navBarContainer}>
+          <ul className={styles.navBarFooter}>
+            <NavLink to="/" className={getLinkClassname}>
               Person List
             </NavLink>
-            <NavLink to="/about" className="nav-links">
+            <NavLink to="/about" className={getLinkClassname}>
               About
             </NavLink>
-            <NavLink to="/add" className="nav-links">
+            <NavLink to="/add" className={getLinkClassname}>
               Add Employee
             </NavLink>
           </ul>

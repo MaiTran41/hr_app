@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../AddEmployee/AddEmployee.css";
+import styles from "../AddEmployee/AddEmployee.module.css";
 import { useNavigate } from "react-router";
 import axios from "axios";
 
@@ -67,13 +67,13 @@ const AddEmployee = ({ onAddEmployee }) => {
 
   return (
     <>
-      <form id="form-container" onSubmit={handleSubmit}>
+      <form className={styles.formContainer} onSubmit={handleSubmit}>
         <h1>Add Employee Form</h1>
 
-        <div id="form-input-container">
-          <div className="form-inputs-wrapper">
-            <div className="form-inputs">
-              <div className="label-wrapper">
+        <div className={styles.formInputContainer}>
+          <div className={styles.formInputsWrapper}>
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="name">Name</label>
               </div>
               <input
@@ -85,8 +85,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="title">Title</label>
               </div>
               <input
@@ -98,8 +98,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="salary">Salary</label>
               </div>
               <input
@@ -111,8 +111,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="phone">Phone</label>
               </div>
               <input
@@ -124,8 +124,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="email">Email</label>
               </div>
               <input
@@ -137,8 +137,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="animal">Animal</label>
               </div>
               <input
@@ -150,8 +150,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="">Start Date</label>
               </div>
               <input
@@ -163,8 +163,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="location">Location</label>
               </div>
               <input
@@ -176,8 +176,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="department">Department</label>
               </div>
               <input
@@ -189,8 +189,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="skills">Skills</label>
               </div>
               <input

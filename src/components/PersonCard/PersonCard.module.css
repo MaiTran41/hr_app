@@ -1,4 +1,4 @@
-.person-block {
+.personBlock {
   background-color: #eb9896;
   color: #175a4e;
   border-radius: 12px;
@@ -13,7 +13,6 @@
 
 .inputs {
   font-family: inherit;
-
   border: none;
   border-radius: 5px;
   height: 30px;
@@ -23,7 +22,7 @@
   height: 50px;
   width: 100px;
 }
-.btn-container {
+.btnContainer {
   margin: 12px;
   display: flex;
   justify-content: center;
@@ -38,9 +37,9 @@ button {
   border-radius: 5px;
   width: fit-content;
   padding: 8px 16px;
-  transition: 0.3 all ease-in;
 }
 
 button:hover {
-  background-color: #bb5009;
+  transition: 0.3s all ease;
+  background-color: #ae5112;
 }

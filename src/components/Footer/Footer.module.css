@@ -1,44 +1,34 @@
-header {
+.footerContainer {
   background-color: #ebebbc;
   color: #175a4e;
+  font-family: inherit;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 30px;
+  padding: 20px 30px;
 }
 
-#nav-bar-header {
-  height: 15vh;
+.navBarFooter {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
 }
 
-.nav-links {
+.navLinks {
+  display: flex;
+  justify-content: flex-end;
   text-decoration: none;
   color: inherit;
   font-family: inherit;
 }
 
-.nav-links:hover {
+.navLinks:hover {
   color: #114239;
   font-weight: 600;
   transition: all 0.3s ease-in;
 }
 
-.nav-links.active {
+.navLinks.active {
   text-decoration: underline dotted #175a4e 2px;
   text-underline-offset: 8px;
   font-weight: 500;
-}
-
-#logo {
-  font-family: inherit;
-  color: inherit;
-  text-decoration: none;
-}
-
-#logo:hover {
-  cursor: pointer;
 }

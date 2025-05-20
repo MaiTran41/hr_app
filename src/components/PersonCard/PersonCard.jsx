@@ -1,4 +1,4 @@
-import "./PersonCard.css";
+import styles from "../PersonCard/PersonCard.module.css";
 import { emojisMap } from "../../data/emojisMap";
 import { useState } from "react";
 
@@ -84,14 +84,14 @@ const PersonCard = ({
   };
 
   return (
-    <div className="person-block">
+    <div className={styles.personBlock}>
       <p>ID: {id}</p>
       <p>Name: {name}</p>
       <p>Title: {title}</p>
 
       {isEditing ? (
         <input
-          className="inputs"
+          className={styles.inputs}
           type="number"
           value={newSalary}
           onChange={(e) => setNewSalary(e.target.value)}
@@ -107,7 +107,7 @@ const PersonCard = ({
 
       {isEditing ? (
         <input
-          className="inputs"
+          className={styles.inputs}
           type="text"
           value={newLocation}
           onChange={(e) => setNewLocation(e.target.value)}
@@ -118,7 +118,7 @@ const PersonCard = ({
 
       {isEditing ? (
         <input
-          className="inputs"
+          className={styles.inputs}
           type="text"
           value={newDepartment}
           onChange={(e) => setNewDepartment(e.target.value)}
@@ -129,7 +129,7 @@ const PersonCard = ({
 
       {isEditing ? (
         <input
-          className="inputs"
+          className={styles.inputs}
           type="text"
           value={newSkills}
           onChange={(e) => setNewSkills(e.target.value)}
@@ -146,7 +146,7 @@ const PersonCard = ({
       )}
 
       {isEditing ? (
-        <div className="btn-container">
+        <div className={styles.btnContainer}>
           <button onClick={handleSaveFields}>Save</button>
           <button onClick={handleCancel}>Cancel</button>
         </div>
