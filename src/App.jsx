@@ -23,6 +23,21 @@ function App() {
     setEmployeesData((prev) => [...prev, newEmployee]);
   };
 
+  const handleFieldChange = (id, newSalary) => {
+    axios
+      .patch(`http://localhost:3001/employees/${id}`, {
+        salary: newSalary,
+      })
+      .then((res) =>
+        setEmployeesData((prev) =>
+          prev.map((employee) =>
+            employee.id === id ? { ...employee, salary: res.data } : employee
+          )
+        )
+      )
+      .catch((err) => console.error("Failed to update the salary", err));
+  };
+
   // const router = createBrowserRouter([
   //   {
   //     path: "/",
@@ -54,6 +69,7 @@ function App() {
               <PersonList
                 employeesData={employeesData}
                 setEmployeesData={setEmployeesData}
+                onSalaryChange={handleFieldChange}
               />
             }
           ></Route>

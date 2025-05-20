@@ -53,21 +53,45 @@ const PersonCard = ({
   location,
   department,
   skills,
+  onSalaryChange,
+  onDepartmentChange,
+  onLocationChange,
+  onSkillsChange,
 }) => {
+  console.log("Skills receieved", skills);
+
   const [isEditing, setIsEditing] = useState(false);
   const [newSalary, setNewSalary] = useState(salary);
+  const [newLocation, setNewLocation] = useState(location);
+  const [newDepartment, setNewDepartment] = useState(department);
+  const [newSkills, setNewSkills] = useState(skills);
 
-  const handleEditFields = () => {};
+  const handleSaveFields = () => {
+    onSalaryChange(id, parseFloat(newSalary));
+    // onLocationChange(id, newLocation);
+    // onDepartmentChange(id, newDepartment);
+    // onSkillsChange(id, newSkills);
+
+    setIsEditing(!isEditing);
+  };
+  const handleCancel = () => {
+    setNewSalary(salary);
+    setNewLocation(location);
+    setNewDepartment(department);
+    setNewSkills(skills);
+
+    setIsEditing(!isEditing);
+  };
 
   return (
     <div className="person-block">
       <p>ID: {id}</p>
       <p>Name: {name}</p>
       <p>Title: {title}</p>
-      {/* <p>Salary: {salary}€</p> */}
 
       {isEditing ? (
         <input
+          className="inputs"
           type="number"
           value={newSalary}
           onChange={(e) => setNewSalary(e.target.value)}
@@ -80,9 +104,39 @@ const PersonCard = ({
       <p>Email: {email}</p>
       <p>Animal: {emojisMap[animal.toLowerCase()]}</p>
       <p>Start Date: {startDate}</p>
-      <p>Location: {location}</p>
-      <p>Department: {department}</p>
-      <p>Skills: {skills.join(", ")}</p>
+
+      {isEditing ? (
+        <input
+          className="inputs"
+          type="text"
+          value={newLocation}
+          onChange={(e) => setNewLocation(e.target.value)}
+        />
+      ) : (
+        <p>Location: {location}</p>
+      )}
+
+      {isEditing ? (
+        <input
+          className="inputs"
+          type="text"
+          value={newDepartment}
+          onChange={(e) => setNewDepartment(e.target.value)}
+        />
+      ) : (
+        <p>Department: {department}</p>
+      )}
+
+      {isEditing ? (
+        <input
+          className="inputs"
+          type="text"
+          value={newSkills}
+          onChange={(e) => setNewSkills(e.target.value)}
+        />
+      ) : (
+        <p>Skills: {skills.join(", ")}</p>
+      )}
 
       {shouldRenderRecognitionMsg(startDate) && (
         <p>🎉 Schedule recognition meeting</p>
@@ -92,10 +146,10 @@ const PersonCard = ({
       )}
 
       {isEditing ? (
-        <>
-          <button onClick={() => setIsEditing(!isEditing)}>Save</button>
-          <button onClick={() => setIsEditing(!isEditing)}>Cancel</button>
-        </>
+        <div className="btn-container">
+          <button onClick={handleSaveFields}>Save</button>
+          <button onClick={handleCancel}>Cancel</button>
+        </div>
       ) : (
         <button onClick={() => setIsEditing(!isEditing)}>Edit</button>
       )}

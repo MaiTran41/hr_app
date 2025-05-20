@@ -11,55 +11,36 @@
   gap: 0.5rem;
 }
 
-/* #form-container {
-  background-color: #eb9896;
-  color: #175a4e;
-  padding: 28px;
-}
-
-#form-input-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-}
-
-.form-inputs {
-  display: flex;
-  margin: 1.15rem;
-}
-
-.form-inputs input {
-  color: #175a4e;
+.inputs {
   font-family: inherit;
-  border-radius: 5px;
+
   border: none;
+  border-radius: 5px;
   height: 30px;
-  width: 200px;
-  text-align: left;
-  padding: 0 16px;
 }
 
-#add-employee-btn {
-  background-color: #175a4e;
+#skill-inputs {
+  height: 50px;
+  width: 100px;
+}
+.btn-container {
+  margin: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+button {
+  background-color: #d35400;
   color: white;
-  font-family: inherit;
   border: none;
   border-radius: 5px;
   width: fit-content;
-  height: 30px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 8px 16px;
+  transition: 0.3 all ease-in;
 }
 
-#add-employee-btn:hover {
-  background-color: #144038;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+button:hover {
+  background-color: #bb5009;
 }
-
-.label-wrapper {
-  min-width: 100px;
-  text-align: left;
-} */
