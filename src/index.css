@@ -1,13 +1,20 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  /* font-weight: 400; */
-  /* color: rgba(255, 255, 255, 0.87); */
 
   --font-heading: "Nunito Sans", sans-serif;
   --font-body: "Source Sans Pro", sans-serif;
+
+  --primary-color: #175a4e;
+  --secondary-color: #ebebbc;
+
+  --primary-btn-bg-color: #175a4e;
+  --secondary-btn-bg-color: #ae2a2a;
+
+  --primary-btn-bg-hover-color: #144038;
+  --secondary-btn-bg-hover-color: #8f2727;
 }
 
 body {
-  background-color: #175a4e;
+  font-family: var(--font-body);
 }

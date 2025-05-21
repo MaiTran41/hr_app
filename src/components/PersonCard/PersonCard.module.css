@@ -1,9 +1,6 @@
 .personBlock {
-  /* background-color: #eb9896; */
   background-color: blanchedalmond;
-  /* background-color: #ffeeee; */
-  font-family: var(--font-body);
-  color: #175a4e;
+  color: var(--primary-color);
   border-radius: 12px;
   padding: 1rem;
   aspect-ratio: 4/3;
@@ -35,7 +32,7 @@
 
 .btn {
   font-family: var(--font-body);
-  background-color: #175a4e;
+  background-color: var(--primary-btn-bg-color);
   color: white;
   border: none;
   border-radius: 5px;
@@ -45,17 +42,17 @@
 
 .btn:hover {
   transition: 0.3s all ease;
-  background-color: #144038;
+  background-color: var(--primary-btn-bg-hover-color);
 }
 
 .cancelBtn {
-  background-color: #ae2a2a;
+  background-color: var(--secondary-btn-bg-color);
 }
 
 .cancelBtn:hover {
-  background-color: #8f2727;
+  background-color: var(--secondary-btn-bg-hover-color);
 }
 
 .saveBtn {
-  background-color: #175a4e;
+  background-color: var(--primary-btn-bg-color);
 }

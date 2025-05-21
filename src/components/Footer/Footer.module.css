@@ -1,7 +1,6 @@
 .footerContainer {
-  background-color: #ebebbc;
-  color: #175a4e;
-  font-family: inherit;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +27,7 @@
 }
 
 .navLinks.active {
-  text-decoration: underline dotted #175a4e 2px;
+  text-decoration: underline dotted var(--primary-color) 2px;
   text-underline-offset: 8px;
   font-weight: 500;
 }

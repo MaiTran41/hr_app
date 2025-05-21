@@ -5,6 +5,7 @@
 }
 
 .employeeListContainer {
+  background-color: var(--primary-color);
   padding: 20px;
   display: flex;
   flex-direction: column;
