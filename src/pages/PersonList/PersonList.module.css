@@ -1,15 +1,17 @@
-.employee-list-container h2 {
+.heading {
+  font-family: var(--font-heading);
   font-size: 36px;
+  color: white;
 }
 
-.employee-list-container {
+.employeeListContainer {
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.employee-list-wrapper {
+.employeeListWrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

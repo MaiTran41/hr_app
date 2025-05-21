@@ -1,5 +1,8 @@
 .personBlock {
-  background-color: #eb9896;
+  /* background-color: #eb9896; */
+  background-color: blanchedalmond;
+  /* background-color: #ffeeee; */
+  font-family: var(--font-body);
   color: #175a4e;
   border-radius: 12px;
   padding: 1rem;
@@ -12,7 +15,7 @@
 }
 
 .inputs {
-  font-family: inherit;
+  font-family: var(--font-body);
   border: none;
   border-radius: 5px;
   height: 30px;
@@ -30,8 +33,9 @@
   gap: 0.75rem;
 }
 
-button {
-  background-color: #d35400;
+.btn {
+  font-family: var(--font-body);
+  background-color: #175a4e;
   color: white;
   border: none;
   border-radius: 5px;
@@ -39,7 +43,19 @@ button {
   padding: 8px 16px;
 }
 
-button:hover {
+.btn:hover {
   transition: 0.3s all ease;
-  background-color: #ae5112;
+  background-color: #144038;
+}
+
+.cancelBtn {
+  background-color: #ae2a2a;
+}
+
+.cancelBtn:hover {
+  background-color: #8f2727;
+}
+
+.saveBtn {
+  background-color: #175a4e;
 }

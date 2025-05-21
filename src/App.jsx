@@ -38,27 +38,6 @@ function App() {
       .catch((err) => console.error("Failed to update the salary", err));
   };
 
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: (
-  //       <PersonList
-  //         employeesData={employeesData}
-  //         setEmployeesData={setEmployeesData}
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     path: "/about",
-  //     element: <About />,
-  //   },
-  //   {
-  //     path: "/add",
-  //     element: <AddEmployee onAddEmployee={addEmployeeHandler} />,
-  //   },
-  // ]);
-  // return <RouterProvider router={router} />;
-
   return (
     <BrowserRouter>
       <Routes>

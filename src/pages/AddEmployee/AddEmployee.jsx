@@ -68,9 +68,8 @@ const AddEmployee = ({ onAddEmployee }) => {
   return (
     <>
       <form className={styles.formContainer} onSubmit={handleSubmit}>
-        <h1>Add Employee Form</h1>
-
         <div className={styles.formInputContainer}>
+          <h1>Add Employee Form</h1>
           <div className={styles.formInputsWrapper}>
             <div className={styles.formInputs}>
               <div className={styles.labelWrapper}>
@@ -202,7 +201,7 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
           </div>
-          <button id="add-employee-btn">Add</button>
+          <button className={styles.addBtn}>Add</button>
         </div>
       </form>
     </>

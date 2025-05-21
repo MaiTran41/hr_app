@@ -147,11 +147,27 @@ const PersonCard = ({
 
       {isEditing ? (
         <div className={styles.btnContainer}>
-          <button onClick={handleSaveFields}>Save</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <button
+            className={`${styles.btn} ${styles.saveBtn}`}
+            onClick={handleSaveFields}
+          >
+            Save
+          </button>
+
+          <button
+            className={`${styles.btn} ${styles.cancelBtn}`}
+            onClick={handleCancel}
+          >
+            Cancel
+          </button>
         </div>
       ) : (
-        <button onClick={() => setIsEditing(!isEditing)}>Edit</button>
+        <button
+          className={`${styles.btn} ${styles.editBtn}`}
+          onClick={() => setIsEditing(!isEditing)}
+        >
+          Edit
+        </button>
       )}
     </div>
   );

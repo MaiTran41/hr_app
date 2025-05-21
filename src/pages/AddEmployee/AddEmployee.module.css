@@ -1,5 +1,5 @@
 .formContainer {
-  background-color: #eb9896;
+  background-color: #175a4e;
   color: #175a4e;
   padding: 28px;
   display: flex;
@@ -8,7 +8,9 @@
 }
 
 .formInputContainer {
-  background-color: #ffeeee;
+  /* background-color: #ffeeee; */
+  /* background-color: #ebebbc; */
+  background-color: blanchedalmond;
   width: 400px;
   padding: 24px;
   display: flex;
@@ -16,6 +18,7 @@
   align-items: center;
   justify-content: center;
   height: auto;
+  border-radius: 10px;
 }
 
 .formInputs {
@@ -27,15 +30,16 @@
   color: #175a4e;
   font-family: inherit;
   border-radius: 5px;
-  border: none;
+  border: 1px solid #175a4e;
   height: 30px;
   width: 200px;
   text-align: left;
   padding: 0 16px;
 }
 
-#add-employee-btn {
+.addBtn {
   background-color: #175a4e;
+  /* background-color: #78ac6c; */
   color: white;
   font-family: inherit;
   border: none;
@@ -48,12 +52,12 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#add-employee-btn:hover {
+.addBtn:hover {
   background-color: #144038;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .labelWrapper {
   min-width: 100px;
-  text-align: lexft;
+  text-align: left;
 }
