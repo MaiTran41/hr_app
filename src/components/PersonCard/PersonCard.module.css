@@ -1,31 +1,43 @@
-.personBlock {
-  background-color: blanchedalmond;
+.personCardContainer {
+  background-color: var(--secondary-color);
   color: var(--primary-color);
   border-radius: 12px;
+  border-top: 50px solid #d6b87c;
+  border-bottom: 30px solid #d6b87c;
   padding: 1rem;
-  aspect-ratio: 4/3;
-  width: 300px;
+  width: 320px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.inputs {
-  font-family: var(--font-body);
-  border: none;
-  border-radius: 5px;
-  height: 30px;
+.alertContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  border-radius: 6px;
+}
+.alertContainerSuccess {
+  background-color: #a5c9a5;
+  color: #1e4620;
+}
+.alertContainerWarning {
+  background-color: #e4e08d;
+  color: #434218;
 }
 
-#skill-inputs {
-  height: 50px;
-  width: 100px;
-}
-.btnContainer {
-  margin: 12px;
+.avatarContainer {
   display: flex;
   justify-content: center;
+}
+
+.btnContainer {
+  padding-right: 20px;
+  padding-top: 16px;
+  display: flex;
+  justify-content: end;
   align-items: center;
   gap: 0.75rem;
 }
@@ -33,11 +45,11 @@
 .btn {
   font-family: var(--font-body);
   background-color: var(--primary-btn-bg-color);
-  color: white;
+  color: var(--primary-btn-text-color);
   border: none;
   border-radius: 5px;
   width: fit-content;
-  padding: 8px 16px;
+  padding: 8px 20px;
 }
 
 .btn:hover {

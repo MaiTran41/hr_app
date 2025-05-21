@@ -1,0 +1,39 @@
+.fieldWrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.labelWrapper {
+  flex: 1;
+  text-align: left;
+}
+
+.valueWrapper p {
+  font-weight: 700;
+}
+
+.valueWrapper {
+  flex: 2;
+}
+
+.wordBreakAll {
+  word-break: break-all;
+}
+
+.inputs {
+  font-family: var(--font-body);
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  padding: 12px;
+}
+
+.textarea {
+  font-family: var(--font-body);
+  border: none;
+  border-radius: 5px;
+  height: 80px;
+  padding: 12px;
+}

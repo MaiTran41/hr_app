@@ -1,4 +1,4 @@
-import styles from "../Header/Header.module.css";
+import styles from "./Header.module.css";
 import { NavLink } from "react-router";
 
 const Header = ({ logo }) => {

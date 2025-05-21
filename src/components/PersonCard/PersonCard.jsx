@@ -1,6 +1,7 @@
 import styles from "../PersonCard/PersonCard.module.css";
 import { emojisMap } from "../../data/emojisMap";
 import { useState } from "react";
+import PersonCardField from "./PersonCardField/PersonCardField";
 
 const calculateWorkingYears = (startDateStr) => {
   const today = new Date();
@@ -58,13 +59,13 @@ const PersonCard = ({
   onLocationChange,
   onSkillsChange,
 }) => {
-  console.log("Skills receieved", skills);
+  const skillStr = skills.join(", ");
 
   const [isEditing, setIsEditing] = useState(false);
   const [newSalary, setNewSalary] = useState(salary);
   const [newLocation, setNewLocation] = useState(location);
   const [newDepartment, setNewDepartment] = useState(department);
-  const [newSkills, setNewSkills] = useState(skills);
+  const [newSkills, setNewSkills] = useState(skillStr);
 
   const handleSaveFields = () => {
     onSalaryChange(id, parseFloat(newSalary));
@@ -84,91 +85,100 @@ const PersonCard = ({
   };
 
   return (
-    <div className={styles.personBlock}>
-      <p>ID: {id}</p>
-      <p>Name: {name}</p>
-      <p>Title: {title}</p>
-
-      {isEditing ? (
-        <input
-          className={styles.inputs}
-          type="number"
-          value={newSalary}
-          onChange={(e) => setNewSalary(e.target.value)}
-        />
-      ) : (
-        <p>Salary: {salary}€</p>
-      )}
-
-      <p>Phone: {phone}</p>
-      <p>Email: {email}</p>
-      <p>Animal: {emojisMap[animal.toLowerCase()]}</p>
-      <p>Start Date: {startDate}</p>
-
-      {isEditing ? (
-        <input
-          className={styles.inputs}
-          type="text"
-          value={newLocation}
-          onChange={(e) => setNewLocation(e.target.value)}
-        />
-      ) : (
-        <p>Location: {location}</p>
-      )}
-
-      {isEditing ? (
-        <input
-          className={styles.inputs}
-          type="text"
-          value={newDepartment}
-          onChange={(e) => setNewDepartment(e.target.value)}
-        />
-      ) : (
-        <p>Department: {department}</p>
-      )}
-
-      {isEditing ? (
-        <input
-          className={styles.inputs}
-          type="text"
-          value={newSkills}
-          onChange={(e) => setNewSkills(e.target.value)}
-        />
-      ) : (
-        <p>Skills: {skills.join(", ")}</p>
-      )}
-
+    <div className={styles.personCardContainer}>
       {shouldRenderRecognitionMsg(startDate) && (
-        <p>🎉 Schedule recognition meeting</p>
+        <div
+          className={`${styles.alertContainer} ${styles.alertContainerSuccess}`}
+        >
+          <p>🎉 Schedule recognition meeting</p>
+        </div>
       )}
       {shouldRenderProbationMsg(startDate) && (
-        <p>🔔 Schedule probation review</p>
-      )}
-
-      {isEditing ? (
-        <div className={styles.btnContainer}>
-          <button
-            className={`${styles.btn} ${styles.saveBtn}`}
-            onClick={handleSaveFields}
-          >
-            Save
-          </button>
-
-          <button
-            className={`${styles.btn} ${styles.cancelBtn}`}
-            onClick={handleCancel}
-          >
-            Cancel
-          </button>
-        </div>
-      ) : (
-        <button
-          className={`${styles.btn} ${styles.editBtn}`}
-          onClick={() => setIsEditing(!isEditing)}
+        <div
+          className={`${styles.alertContainer} ${styles.alertContainerWarning}`}
         >
-          Edit
-        </button>
+          <p>🔔 Schedule probation review</p>
+        </div>
       )}
+
+      <div className={styles.avatarContainer}>
+        <img
+          src={`https://robohash.org/${name}?set=set3&size=100x100`}
+          alt={`Avatar of ${name}`}
+        />
+      </div>
+
+      <PersonCardField label="Name" value={name} />
+
+      <PersonCardField label="Title" value={title} />
+
+      <PersonCardField
+        label="Salary"
+        value={`${salary}€`}
+        isEditing={isEditing}
+        editValue={newSalary}
+        onEditChange={setNewSalary}
+        inputType="number"
+      />
+
+      <PersonCardField label="Phone" value={phone} />
+
+      <PersonCardField label="Email" value={email} shouldUseWordBreakAll />
+
+      <PersonCardField label="Animal" value={emojisMap[animal.toLowerCase()]} />
+
+      <PersonCardField label="Start Date" value={startDate} />
+
+      <PersonCardField
+        label="Location"
+        value={location}
+        isEditing={isEditing}
+        editValue={newLocation}
+        onEditChange={setNewLocation}
+      />
+
+      <PersonCardField
+        label="Department"
+        value={department}
+        isEditing={isEditing}
+        editValue={newDepartment}
+        onEditChange={setNewDepartment}
+      />
+
+      <PersonCardField
+        label="Skills"
+        value={skillStr}
+        isEditing={isEditing}
+        editValue={newSkills}
+        onEditChange={setNewSkills}
+        shouldUseTextArea
+      />
+
+      <div className={styles.btnContainer}>
+        {isEditing ? (
+          <>
+            <button
+              className={`${styles.btn} ${styles.cancelBtn}`}
+              onClick={handleCancel}
+            >
+              Cancel
+            </button>
+            <button
+              className={`${styles.btn} ${styles.saveBtn}`}
+              onClick={handleSaveFields}
+            >
+              Save
+            </button>
+          </>
+        ) : (
+          <button
+            className={`${styles.btn} ${styles.editBtn}`}
+            onClick={() => setIsEditing(!isEditing)}
+          >
+            Edit
+          </button>
+        )}
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const About = () => {
       <main className={styles.aboutContainer}>
         <div className={styles.aboutWrapper}>
           <h1 className={styles.heading}>Human Resource Application</h1>
-          <p>
+          <p className={styles.description}>
             A modern React application designed to simplify employee management
             for HR teams. The system tracks key employee information and
             highlights important status updates like probation periods or
@@ -28,14 +28,18 @@ const About = () => {
           </ul>
 
           <h2 className={styles.subHeading}>Technologies Used</h2>
-          <ul>
-            <li>React (with Hooks)</li>
-            <li>React Router</li>
-            <li>Axios for API calls</li>
-            <li>JSON Server (local backend for employees)</li>
-            <li>JSONPlaceholder (public test API)</li>
-            <li>Basic CSS</li>
-          </ul>
+          <div className={styles.twoColumnList}>
+            <ul className={styles.column}>
+              <li>React with Hooks</li>
+              <li>React Router</li>
+              <li>Axios for API calls</li>
+            </ul>
+            <ul className={styles.column}>
+              <li>JSON Server</li>
+              <li>JSONPlaceholder public test API</li>
+              <li>Basic CSS</li>
+            </ul>
+          </div>
         </div>
       </main>
     </>

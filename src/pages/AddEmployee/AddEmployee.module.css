@@ -1,6 +1,6 @@
 .formContainer {
-  background-color: #175a4e;
-  color: #175a4e;
+  background-color: var(--primary-color);
+  color: var(--primary-color);
   padding: 28px;
   display: flex;
   flex-direction: column;
@@ -8,8 +8,7 @@
 }
 
 .formInputContainer {
-  /* background-color: #ebebbc; */
-  background-color: #f6e3c6;
+  background-color: var(--secondary-color);
   width: 400px;
   padding: 24px;
   display: flex;
@@ -19,6 +18,10 @@
   height: auto;
   border-radius: 10px;
 }
+.formInputContainer h1 {
+  font-family: var(--font-heading);
+  color: var(--tertiary-color);
+}
 
 .formInputs {
   display: flex;
@@ -26,10 +29,10 @@
 }
 
 .formInputs input {
-  color: #175a4e;
+  color: inherit;
   font-family: inherit;
   border-radius: 5px;
-  border: 1px solid #175a4e;
+  border: 1px solid var(--primary-color);
   height: 30px;
   width: 200px;
   text-align: left;
@@ -37,9 +40,8 @@
 }
 
 .addBtn {
-  background-color: #175a4e;
-  /* background-color: #78ac6c; */
-  color: white;
+  background-color: var(--primary-btn-bg-color);
+  color: var(--primary-btn-text-color);
   font-family: inherit;
   border: none;
   border-radius: 5px;
@@ -52,7 +54,7 @@
 }
 
 .addBtn:hover {
-  background-color: #144038;
+  background-color: var(--primary-btn-bg-hover-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 

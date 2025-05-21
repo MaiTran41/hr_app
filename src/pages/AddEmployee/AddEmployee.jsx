@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../AddEmployee/AddEmployee.module.css";
+import styles from "./AddEmployee.module.css";
 import { useNavigate } from "react-router";
 import axios from "axios";
 

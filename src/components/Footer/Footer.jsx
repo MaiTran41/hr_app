@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import styles from "../Footer/Footer.module.css";
+import styles from "./Footer.module.css";
 
 const Footer = ({ year }) => {
   const getLinkClassname = ({ isActive }) => {
