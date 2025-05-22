@@ -23,9 +23,6 @@ const AddEmployee = ({ onAddEmployee }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // since  'skills' input is a text input aka strings, we want it to be an array
-    // we need to use .split('') to turn inputs into an array
-
     const formattedValue = name === "skills" ? value.split(",") : value;
 
     setFormData((prev) => ({ ...prev, [name]: formattedValue }));

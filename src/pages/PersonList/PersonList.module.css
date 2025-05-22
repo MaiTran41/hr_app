@@ -45,5 +45,9 @@
 }
 
 .searchMessage {
-  color: white;
+  background-color: #a5c9a5;
+  color: #1e4620;
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
 }

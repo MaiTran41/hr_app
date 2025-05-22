@@ -23,19 +23,25 @@ function App() {
     setEmployeesData((prev) => [...prev, newEmployee]);
   };
 
-  const handleFieldChange = (id, newSalary) => {
-    axios
-      .patch(`http://localhost:3001/employees/${id}`, {
-        salary: newSalary,
-      })
-      .then((res) =>
-        setEmployeesData((prev) =>
-          prev.map((employee) =>
-            employee.id === id ? { ...employee, salary: res.data } : employee
-          )
-        )
+  const handlePersonCardFormSave = async ({
+    id,
+    salary,
+    location,
+    department,
+    skills,
+  }) => {
+    const res = await axios.patch(`http://localhost:3001/employees/${id}`, {
+      salary,
+      location,
+      department,
+      skills,
+    });
+
+    setEmployeesData((prev) =>
+      prev.map((employee) =>
+        employee.id === id ? { ...employee, ...res.data } : employee
       )
-      .catch((err) => console.error("Failed to update the salary", err));
+    );
   };
 
   return (
@@ -48,7 +54,7 @@ function App() {
               <PersonList
                 employeesData={employeesData}
                 setEmployeesData={setEmployeesData}
-                onSalaryChange={handleFieldChange}
+                onFormSave={handlePersonCardFormSave}
               />
             }
           ></Route>

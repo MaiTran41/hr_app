@@ -2,7 +2,6 @@
   background-color: var(--secondary-color);
   color: var(--primary-color);
   border-radius: 12px;
-  /* border-top: 50px solid #d6b87c; */
   border-bottom: 30px solid #d6b87c;
   width: 320px;
   display: flex;
@@ -32,19 +31,31 @@
   color: #434218;
 }
 
-/* .avatarContainer {
-  display: flex;
-  justify-content: center;
-} */
-
 .cardHeaderContainer {
   background-color: #d6b87c;
-  padding: 0 1.5rem;
-  margin: 0;
   display: flex;
   align-items: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  justify-content: space-around;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+}
+
+.confirmMsg {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 4px;
+}
+.successMsg {
+  border: 1px solid #a5c9a5;
+  color: #1e4620;
+}
+.failedMsg {
+  border: 1px solid #cd5252;
+  color: #cd5252;
 }
 
 .btnContainer {

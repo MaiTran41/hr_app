@@ -3,7 +3,7 @@ import PersonCard from "../../components/PersonCard/PersonCard";
 import { useState } from "react";
 import BackToTopBtn from "../../components/BackToTopBtn/BackToTopBtn";
 
-const PersonList = ({ employeesData, onSalaryChange }) => {
+const PersonList = ({ employeesData, onFormSave }) => {
   const [searchValue, setSearchValue] = useState("");
 
   const searchHandle = (e) => {
@@ -13,6 +13,7 @@ const PersonList = ({ employeesData, onSalaryChange }) => {
   const filteredEmployees = employeesData.filter((employee) => {
     const search = searchValue.toLowerCase();
 
+    console.log(employee);
     const matchesSearch =
       employee.name.trim().toLowerCase().includes(search) ||
       employee.title.trim().toLowerCase().includes(search) ||
@@ -43,9 +44,7 @@ const PersonList = ({ employeesData, onSalaryChange }) => {
               <PersonCard
                 key={employee.id}
                 {...employee}
-                onSalaryChange={(id, newSalary) =>
-                  onSalaryChange(id, newSalary)
-                }
+                onFormSave={onFormSave}
               />
             ))
           ) : (

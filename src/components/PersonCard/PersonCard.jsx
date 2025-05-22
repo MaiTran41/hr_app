@@ -1,4 +1,4 @@
-import styles from "../PersonCard/PersonCard.module.css";
+import styles from "./PersonCard.module.css";
 import { emojisMap } from "../../data/emojisMap";
 import { useState } from "react";
 import PersonCardField from "./PersonCardField/PersonCardField";
@@ -47,10 +47,7 @@ const PersonCard = ({
   location,
   department,
   skills,
-  onSalaryChange,
-  onDepartmentChange,
-  onLocationChange,
-  onSkillsChange,
+  onFormSave,
 }) => {
   const skillStr = skills.join(", ");
 
@@ -59,15 +56,30 @@ const PersonCard = ({
   const [newLocation, setNewLocation] = useState(location);
   const [newDepartment, setNewDepartment] = useState(department);
   const [newSkills, setNewSkills] = useState(skillStr);
+  const [saveStatus, setSaveStatus] = useState("idle");
 
-  const handleSaveFields = () => {
-    onSalaryChange(id, parseFloat(newSalary));
-    // onLocationChange(id, newLocation);
-    // onDepartmentChange(id, newDepartment);
-    // onSkillsChange(id, newSkills);
+  const handleFormSave = async () => {
+    try {
+      await onFormSave({
+        id,
+        salary: parseFloat(newSalary),
+        location: newLocation,
+        department: newDepartment,
+        skills: newSkills.split(", "),
+      });
 
-    setIsEditing(!isEditing);
+      setIsEditing(!isEditing);
+
+      setSaveStatus("success");
+    } catch (err) {
+      setSaveStatus("failed");
+    } finally {
+      setTimeout(() => {
+        setSaveStatus("idle");
+      }, 3000);
+    }
   };
+
   const handleCancel = () => {
     setNewSalary(salary);
     setNewLocation(location);
@@ -80,7 +92,7 @@ const PersonCard = ({
   return (
     <div className={styles.personCardContainer}>
       <div className={styles.cardHeaderContainer}>
-        <PersonCardField label="Name" value={name} />
+        <PersonCardField value={name} />
 
         <img
           src={`https://robohash.org/${name}?set=set3&size=90x90`}
@@ -103,16 +115,6 @@ const PersonCard = ({
             <p>🔔 Schedule probation review 🔔</p>
           </div>
         )}
-
-        {/* 
-      <div className={styles.avatarContainer}>
-        <img
-          src={`https://robohash.org/${name}?set=set3&size=100x100`}
-          alt={`Avatar of ${name}`}
-        />
-      </div> */}
-
-        {/* <PersonCardField label="Name" value={name} /> */}
 
         <PersonCardField label="Title" value={title} />
 
@@ -161,6 +163,19 @@ const PersonCard = ({
           shouldUseTextArea
         />
 
+        {saveStatus === "success" && (
+          <div className={`${styles.confirmMsg} ${styles.successMsg}`}>
+            <p>✓ Updated successfully! </p>
+
+            <p>Your changes has been saved.</p>
+          </div>
+        )}
+        {saveStatus === "failed" && (
+          <div className={`${styles.confirmMsg} ${styles.failedMsg}`}>
+            Failed to update! Please try again!
+          </div>
+        )}
+
         <div className={styles.btnContainer}>
           {isEditing ? (
             <>
@@ -172,7 +187,7 @@ const PersonCard = ({
               </button>
               <button
                 className={`${styles.btn} ${styles.saveBtn}`}
-                onClick={handleSaveFields}
+                onClick={handleFormSave}
               >
                 Save
               </button>

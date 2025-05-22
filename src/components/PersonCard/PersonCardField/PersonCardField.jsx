@@ -30,9 +30,11 @@ const PersonCardField = ({
 
   return (
     <div className={styles.fieldWrapper}>
-      <div className={styles.labelWrapper}>
-        <label>{label}:</label>
-      </div>
+      {label !== undefined && (
+        <div className={styles.labelWrapper}>
+          <label>{label}:</label>
+        </div>
+      )}
       <div className={styles.valueWrapper}>
         {isEditing ? (
           renderInput()
