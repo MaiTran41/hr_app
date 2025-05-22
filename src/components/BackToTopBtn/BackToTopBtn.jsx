@@ -1,25 +1,22 @@
 import { useState, useEffect } from "react";
 import styles from "./BackToTopBtn.module.css";
 
-const BackToTopBtn = ({ threshold = 200, className = "" }) => {
+const BackToTopBtn = ({ showAfter = 200, className = "" }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > threshold) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      return window.scrollY > showAfter
+        ? setIsVisible(true)
+        : setIsVisible(false);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [threshold]);
+  }, [showAfter]);
 
   const scrollToTop = () => {
     window.scrollTo({

@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./AddEmployee.module.css";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import BackToTopBtn from "../../components/BackToTopBtn/BackToTopBtn";
 
 const AddEmployee = ({ onAddEmployee }) => {
   const [formData, setFormData] = useState({
@@ -204,6 +205,8 @@ const AddEmployee = ({ onAddEmployee }) => {
           <button className={styles.addBtn}>Add</button>
         </div>
       </form>
+
+      <BackToTopBtn showAfter={200} />
     </>
   );
 };

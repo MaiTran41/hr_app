@@ -1,3 +1,4 @@
+import BackToTopBtn from "../../components/BackToTopBtn/BackToTopBtn";
 import styles from "../About/About.module.css";
 
 const About = () => {
@@ -42,6 +43,8 @@ const About = () => {
           </div>
         </div>
       </main>
+
+      <BackToTopBtn showAfter={200} />
     </>
   );
 };

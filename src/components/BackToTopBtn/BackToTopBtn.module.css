@@ -1,22 +1,22 @@
 .backToTop {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background-color: #007bff;
+  bottom: 120px;
+  right: 24px;
+  width: 40px;
+  aspect-ratio: 1/1;
+  background-color: var(--tertiary-btn-bg-color);
   color: white;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 1.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  box-shadow: 0 4px 8px #ff6b354d;
   transition: all 0.3s ease;
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-  z-index: 1000;
 }
 
 .backToTop.show {
@@ -26,16 +26,61 @@
 }
 
 .backToTop:hover {
-  background-color: #0056b3;
+  background-color: var(--tertiary-btn-bg-hover-color);
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 12px rgba(229, 90, 43, 0.4);
 }
 
 .backToTop:active {
   transform: translateY(0);
+  background-color: #d14d20;
 }
 
 .backToTop:focus {
-  outline: 2px solid #0056b3;
+  outline: 2px solid var(--tertiary-btn-bg-hover-color);
   outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .backToTop {
+    width: 30px;
+    height: 30px;
+    bottom: 140px;
+    right: 25px;
+    font-size: 16px;
+    box-shadow: 0 3px 6px rgba(255, 107, 53, 0.3);
+  }
+
+  .backToTop:hover {
+    box-shadow: 0 4px 8px rgba(229, 90, 43, 0.4);
+  }
+}
+
+@media (max-width: 480px) {
+  .backToTop {
+    width: 40px;
+    aspect-ratio: 1/1;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px #ff6b354d;
+  }
+
+  .backToTop:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(229, 90, 43, 0.4);
+  }
+
+  .backToTop:active {
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: 640px) {
+  .backToTop {
+    width: 30px;
+    right: 16px;
+    bottom: 112px;
+  }
 }

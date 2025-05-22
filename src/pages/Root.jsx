@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer";
 const Root = () => {
   return (
     <>
-      <Header logo="Mai Tran"></Header>
+      <Header logo="HR Application"></Header>
       <main>
         <Outlet />
       </main>

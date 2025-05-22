@@ -11,11 +11,13 @@
 
   --primary-btn-bg-color: #175a4e;
   --secondary-btn-bg-color: #ae2a2a;
+  --tertiary-btn-bg-color: #ff6b35;
 
   --primary-btn-text-color: white;
 
   --primary-btn-bg-hover-color: #144038;
   --secondary-btn-bg-hover-color: #8f2727;
+  --tertiary-btn-bg-hover-color: #e55a2b;
 }
 
 * {

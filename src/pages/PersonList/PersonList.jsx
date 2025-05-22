@@ -1,6 +1,7 @@
 import styles from "./PersonList.module.css";
 import PersonCard from "../../components/PersonCard/PersonCard";
 import { useState } from "react";
+import BackToTopBtn from "../../components/BackToTopBtn/BackToTopBtn";
 
 const PersonList = ({ employeesData, onSalaryChange }) => {
   const [searchValue, setSearchValue] = useState("");
@@ -54,6 +55,8 @@ const PersonList = ({ employeesData, onSalaryChange }) => {
           )}
         </div>
       </div>
+
+      <BackToTopBtn showAfter={200} />
     </>
   );
 };
