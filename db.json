@@ -4,17 +4,14 @@
       "id": "1",
       "name": "Aino Virtanen",
       "title": "HR Manager",
-      "salary": 1233,
+      "salary": 1200,
       "phone": "040-1234567",
-      "email": "aino.virtanen@example.com",
+      "email": "aino.virtanen@mail.com",
       "animal": "Owl",
       "startDate": "2018-04-01",
       "location": "Helsinki",
       "department": "Human Resources",
-      "skills": [
-        "Recruiting",
-        "Communication"
-      ]
+      "skills": ["Recruiting", "Communication"]
     },
     {
       "id": "2",
@@ -22,16 +19,12 @@
       "title": "Software Developer",
       "salary": 4500,
       "phone": "050-2345678",
-      "email": "mikko.korhonen@example.com",
+      "email": "mikko.korhonen@mail.com",
       "animal": "Fox",
       "startDate": "2024-12-15",
       "location": "Tampere",
       "department": "Engineering",
-      "skills": [
-        "JavaScript",
-        "React",
-        "Node.js"
-      ]
+      "skills": ["JavaScript", "React", "Node.js", "CSS"]
     },
     {
       "id": "3",
@@ -39,16 +32,12 @@
       "title": "Marketing Specialist",
       "salary": 3900,
       "phone": "045-3456789",
-      "email": "liisa.jarvinen@example.com",
+      "email": "liisa.jarvinen@mail.com",
       "animal": "Dolphin",
       "startDate": "2020-01-10",
       "location": "Turku",
       "department": "Marketing",
-      "skills": [
-        "Social Media",
-        "Content Creation",
-        "SEO"
-      ]
+      "skills": ["Social Media", "Content Creation", "SEO"]
     },
     {
       "id": "4",
@@ -56,16 +45,12 @@
       "title": "Financial Analyst",
       "salary": 4100,
       "phone": "040-4567890",
-      "email": "juha.makinen@example.com",
+      "email": "juha.makinen@mail.com",
       "animal": "Eagle",
       "startDate": "2025-01-04",
       "location": "Helsinki",
       "department": "Finance",
-      "skills": [
-        "Financial Modeling",
-        "Data Analysis",
-        "Reporting"
-      ]
+      "skills": ["Financial Modeling", "Data Analysis", "Reporting"]
     },
     {
       "id": "5",
@@ -73,16 +58,12 @@
       "title": "UX Designer",
       "salary": 4300,
       "phone": "050-5678901",
-      "email": "sanna.nieminen@example.com",
+      "email": "sanna.nieminen@mail.com",
       "animal": "Cat",
       "startDate": "2021-03-08",
       "location": "Espoo",
       "department": "Design",
-      "skills": [
-        "UI Design",
-        "Prototyping",
-        "Figma"
-      ]
+      "skills": ["UI Design", "Prototyping", "Figma"]
     },
     {
       "id": "6",
@@ -90,15 +71,12 @@
       "title": "Project Manager",
       "salary": 4700,
       "phone": "045-6789012",
-      "email": "petri.koskinen@example.com",
+      "email": "petri.koskinen@mail.com",
       "animal": "Wolf",
       "startDate": "2016-11-14",
       "location": "Vantaa",
       "department": "Operations",
-      "skills": [
-        "Project Planning",
-        "Team Leadership"
-      ]
+      "skills": ["Project Planning", "Team Leadership"]
     },
     {
       "id": "7",
@@ -106,15 +84,12 @@
       "title": "Customer Support Specialist",
       "salary": 3600,
       "phone": "040-7890123",
-      "email": "kaisa.lehtonen@example.com",
+      "email": "kaisa.lehtonen@mail.com",
       "animal": "Rabbit",
       "startDate": "2022-01-17",
       "location": "Oulu",
       "department": "Customer Service",
-      "skills": [
-        "Problem Solving",
-        "Communication"
-      ]
+      "skills": ["Problem Solving", "Communication"]
     },
     {
       "id": "8",
@@ -122,16 +97,12 @@
       "title": "Senior Developer",
       "salary": 5200,
       "phone": "050-8901234",
-      "email": "timo.heikkinen@example.com",
+      "email": "timo.heikkinen@mail.com",
       "animal": "Bear",
       "startDate": "2015-07-03",
       "location": "Tampere",
       "department": "Engineering",
-      "skills": [
-        "Python",
-        "AWS",
-        "System Architecture"
-      ]
+      "skills": ["Python", "AWS", "System Architecture"]
     },
     {
       "id": "9",
@@ -139,16 +110,12 @@
       "title": "Sales Representative",
       "salary": 3800,
       "phone": "045-9012345",
-      "email": "maija.laine@example.com",
+      "email": "maija.laine@mail.com",
       "animal": "Butterfly",
       "startDate": "2020-09-01",
       "location": "Jyväskylä",
       "department": "Sales",
-      "skills": [
-        "Negotiation",
-        "CRM",
-        "Presentation"
-      ]
+      "skills": ["Negotiation", "CRM", "Presentation"]
     },
     {
       "id": "10",
@@ -156,16 +123,12 @@
       "title": "IT Support Specialist",
       "salary": 3700,
       "phone": "040-0123456",
-      "email": "antti.hamalainen@example.com",
+      "email": "antti.hamalainen@mail.com",
       "animal": "Owl",
       "startDate": "2019-04-15",
       "location": "Helsinki",
       "department": "IT",
-      "skills": [
-        "Networking",
-        "Windows",
-        "Linux"
-      ]
+      "skills": ["Networking", "Windows", "Linux"]
     },
     {
       "id": "35e4",
@@ -178,12 +141,7 @@
       "startDate": "2025-04-30",
       "location": "ESPOO",
       "department": "IT",
-      "skills": [
-        "HTML",
-        " React",
-        " JS",
-        " CSS"
-      ]
+      "skills": ["HTML", " React", " JS", " CSS"]
     }
   ]
 }

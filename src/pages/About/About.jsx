@@ -19,12 +19,13 @@ const About = () => {
           </p>
           <h2 className={styles.subHeading}>Key Features</h2>
           <ul>
+            <li>Display complete employee profiles and contact information</li>
+            <li>Search functionality by name, department or title</li>
             <li>
-              Maintains complete employee profiles and contact information
+              Show reminder messages for probation review or working recognition
+              based on employee's working period
             </li>
-            <li>Search functionality by name, department, or position</li>
-            <li>Filter to display employees by department or status</li>
-            <li>Adjust salary and benefits information</li>
+            <li>Adjust employee's salary, location, department and skills</li>
             <li>Add new employees through a form</li>
           </ul>
 
