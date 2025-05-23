@@ -2,7 +2,7 @@
   background-color: var(--secondary-color);
   color: var(--primary-color);
   border-radius: 12px;
-  border-bottom: 30px solid #d6b87c;
+  border-bottom: 30px solid #e9ca8d;
   width: 320px;
   display: flex;
   flex-direction: column;
@@ -32,11 +32,12 @@
 }
 
 .cardHeaderContainer {
-  background-color: #d6b87c;
+  background-color: #e9ca8d;
   display: flex;
   align-items: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  border-bottom: 1px solid #d2bf98;
   justify-content: space-around;
   font-family: var(--font-heading);
   font-size: 1.15rem;
@@ -51,11 +52,11 @@
 }
 .successMsg {
   border: 1px solid #a5c9a5;
-  color: #1e4620;
+  color: var(--success-msg-text-color);
 }
 .failedMsg {
   border: 1px solid #cd5252;
-  color: #cd5252;
+  color: var(--failed-msg-text-color);
 }
 
 .btnContainer {

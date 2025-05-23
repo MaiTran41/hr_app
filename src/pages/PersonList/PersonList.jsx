@@ -11,9 +11,8 @@ const PersonList = ({ employeesData, onFormSave }) => {
   };
 
   const filteredEmployees = employeesData.filter((employee) => {
-    const search = searchValue.toLowerCase();
+    const search = searchValue.trim().toLowerCase();
 
-    console.log(employee);
     const matchesSearch =
       employee.name.trim().toLowerCase().includes(search) ||
       employee.title.trim().toLowerCase().includes(search) ||

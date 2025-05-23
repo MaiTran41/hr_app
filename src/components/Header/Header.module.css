@@ -5,11 +5,10 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
-  height: 80px;
 }
 
 .navBarHeader {
-  height: 15vh;
+  height: 14vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -47,7 +46,7 @@ header {
 @media (max-width: 768px) {
   header {
     padding: 0 20px;
-    height: 70px;
+    height: 12vh;
     flex-wrap: wrap;
   }
 
@@ -79,7 +78,6 @@ header {
   }
 }
 
-/* Hamburger menu styles */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -111,7 +109,6 @@ header {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Mobile overlay menu */
 .mobileNavOverlay {
   display: none;
   position: fixed;
@@ -178,7 +175,6 @@ header {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* iPhone SE styles (375px and below) */
 @media (max-width: 375px) {
   header {
     flex-direction: row;
@@ -202,29 +198,7 @@ header {
     display: flex;
   }
 
-  /* Hide regular nav links on mobile */
   .navLinks {
     display: none;
-  }
-}
-
-/* Extra small devices (320px and below) */
-@media (max-width: 320px) {
-  header {
-    padding: 8px 10px;
-  }
-
-  .logo h1 {
-    font-size: 1rem;
-  }
-
-  .navBarHeader {
-    gap: 5px;
-  }
-
-  .navLinks {
-    font-size: 0.75rem;
-    padding: 5px 6px;
-    min-width: 70px;
   }
 }

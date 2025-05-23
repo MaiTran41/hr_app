@@ -31,17 +31,8 @@ const AddEmployee = ({ onAddEmployee }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newEmployee = {
-      ...formData,
-    };
-
     try {
-      const res = await axios.post(
-        "http://localhost:3001/employees",
-        newEmployee
-      );
-
-      onAddEmployee(res.data);
+      await onAddEmployee(formData);
 
       navigate("/");
 
@@ -203,7 +194,7 @@ const AddEmployee = ({ onAddEmployee }) => {
         </div>
       </form>
 
-      <BackToTopBtn showAfter={200} />
+      <BackToTopBtn showAfter={150} />
     </>
   );
 };

@@ -31,7 +31,7 @@
 }
 
 .searchContainer label {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 .searchContainer input {
@@ -46,8 +46,77 @@
 
 .searchMessage {
   background-color: #a5c9a5;
-  color: #1e4620;
+  color: var(--failed-msg-text-color);
   border-radius: 8px;
   padding: 8px;
   border: none;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .employeeListContainer {
+    gap: 1.25rem;
+  }
+
+  .employeeListWrapper {
+    gap: 1.75rem;
+  }
+
+  .searchContainer {
+    gap: 12px;
+  }
+
+  .searchContainer label {
+    font-size: 1.25rem;
+  }
+
+  .searchContainer input {
+    height: 35px;
+    padding-left: 12px;
+    font-size: 1.15rem;
+  }
+
+  .searchMessage {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .heading {
+    font-size: 1.25rem;
+  }
+
+  .employeeListWrapper {
+    gap: 12px;
+    padding: 0 4px;
+    width: 100%;
+  }
+
+  .searchContainer {
+    flex-direction: column;
+    width: 50%;
+    height: 60px;
+  }
+
+  .searchContainer label {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .searchContainer input {
+    width: 100%;
+    padding-left: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+
+  .searchMessage {
+    text-align: center;
+    margin: 10px 8px;
+    font-size: 0.8rem;
+    padding: 12px 8px;
+  }
 }

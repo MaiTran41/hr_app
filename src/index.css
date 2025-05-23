@@ -13,11 +13,14 @@
   --secondary-btn-bg-color: #ae2a2a;
   --tertiary-btn-bg-color: #ff6b35;
 
-  --primary-btn-text-color: white;
-
   --primary-btn-bg-hover-color: #144038;
   --secondary-btn-bg-hover-color: #8f2727;
   --tertiary-btn-bg-hover-color: #e55a2b;
+
+  --primary-btn-text-color: white;
+
+  --success-msg-text-color: #1e4620;
+  --failed-msg-text-color: #cd5252;
 }
 
 * {
@@ -28,4 +31,12 @@
 
 body {
   font-family: var(--font-body);
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }

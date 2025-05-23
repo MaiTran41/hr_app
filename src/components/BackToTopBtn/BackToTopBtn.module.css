@@ -5,7 +5,7 @@
   width: 40px;
   aspect-ratio: 1/1;
   background-color: var(--tertiary-btn-bg-color);
-  color: white;
+  color: var(--primary-btn-text-color);
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -43,10 +43,10 @@
 
 @media (max-width: 768px) {
   .backToTop {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    aspect-ratio: 1/1;
     bottom: 140px;
-    right: 25px;
+    right: 20px;
     font-size: 16px;
     box-shadow: 0 3px 6px rgba(255, 107, 53, 0.3);
   }
@@ -56,11 +56,10 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
   .backToTop {
-    width: 40px;
+    width: 30px;
     aspect-ratio: 1/1;
-    height: 40px;
     bottom: 20px;
     right: 20px;
     font-size: 14px;
