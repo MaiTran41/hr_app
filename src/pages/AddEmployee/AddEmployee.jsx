@@ -57,9 +57,9 @@ const AddEmployee = ({ onAddEmployee }) => {
   return (
     <>
       <form className={styles.formContainer} onSubmit={handleSubmit}>
-        <div className={styles.formInputContainer}>
+        <div className={styles.formContentContainer}>
           <h1>Add Employee Form</h1>
-          <div className={styles.formInputsWrapper}>
+          <div className={styles.formFieldsContainer}>
             <div className={styles.formInputs}>
               <div className={styles.labelWrapper}>
                 <label htmlFor="name">Name</label>

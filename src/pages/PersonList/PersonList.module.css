@@ -90,9 +90,8 @@
   }
 
   .employeeListWrapper {
-    gap: 12px;
+    gap: 1.25rem;
     padding: 0 4px;
-    width: 100%;
   }
 
   .searchContainer {

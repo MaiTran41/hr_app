@@ -91,6 +91,79 @@
   background-color: var(--secondary-btn-bg-hover-color);
 }
 
-.saveBtn {
-  background-color: var(--primary-btn-bg-color);
+@media (max-width: 768px) {
+  .personCardContainer {
+    max-width: 400px;
+  }
+
+  .cardHeaderContainer {
+    font-size: 1.1rem;
+  }
+
+  .cardHeaderContainer img {
+    width: 80px;
+    aspect-ratio: 1/1;
+  }
+
+  .alertContainer {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+
+  .confirmMsg {
+    font-size: 0.8rem;
+  }
+
+  .btnContainer {
+    padding-right: 16px;
+  }
+
+  .btn {
+    padding: 7px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .personCardContainer {
+    max-width: 300px;
+  }
+
+  .cardHeaderContainer {
+    padding: 12px 0;
+    flex-direction: column;
+  }
+
+  .cardHeaderContainer p {
+    gap: 4px;
+    order: 1;
+  }
+
+  .cardHeaderContainer img {
+    width: 70px;
+    aspect-ratio: 1/1;
+    order: -1;
+  }
+
+  .alertContainer {
+    padding: 8px 6px;
+    margin-bottom: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .confirmMsg {
+    font-size: 0.75rem;
+    padding: 8px 4px;
+    line-height: 1.3;
+  }
+
+  .btnContainer {
+    padding-top: 12px;
+  }
+
+  .btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    width: 25%;
+  }
 }

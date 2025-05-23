@@ -29,6 +29,7 @@
   height: 30px;
   padding: 12px;
   margin: 8px 0;
+  width: 100%;
 }
 
 .textarea {
@@ -38,4 +39,71 @@
   height: 80px;
   padding: 12px;
   margin: 8px 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .fieldWrapper {
+    line-height: 1.6;
+  }
+
+  .labelWrapper {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .labelWrapper label {
+    font-weight: 400;
+  }
+
+  .valueWrapper p {
+    font-size: 0.9rem;
+  }
+
+  .inputs {
+    height: 30px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .textarea {
+    padding: 8px 10px;
+    margin: 6px 0;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .fieldWrapper {
+    gap: 4px;
+  }
+
+  .labelWrapper {
+    font-size: 0.85rem;
+  }
+
+  .labelWrapper label {
+    font-weight: 400;
+  }
+
+  .valueWrapper p {
+    font-size: 0.85rem;
+  }
+
+  .inputs {
+    height: 36px;
+    padding: 8px;
+    margin: 4px 0;
+    font-size: 0.85rem;
+    width: 90%;
+  }
+
+  .textarea {
+    padding: 8px;
+    font-size: 0.85rem;
+    width: 90%;
+  }
 }

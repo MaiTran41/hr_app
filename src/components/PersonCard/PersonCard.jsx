@@ -93,7 +93,6 @@ const PersonCard = ({
     <div className={styles.personCardContainer}>
       <div className={styles.cardHeaderContainer}>
         <PersonCardField value={name} />
-
         <img
           src={`https://robohash.org/${name}?set=set3&size=90x90`}
           alt={`Avatar of ${name}`}
