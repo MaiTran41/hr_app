@@ -1,10 +1,31 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.75;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.87);
+  line-height: 1.5;
+
+  --font-heading: "Nunito Sans", sans-serif;
+  --font-body: "Source Sans Pro", sans-serif;
+
+  --primary-color: #175a4e;
+  --secondary-color: #ebebbc;
+  --tertiary-color: #a65c44;
+
+  --primary-btn-bg-color: #175a4e;
+  --secondary-btn-bg-color: #ae2a2a;
+  --tertiary-btn-bg-color: #ff6b35;
+
+  --primary-btn-text-color: white;
+
+  --primary-btn-bg-hover-color: #144038;
+  --secondary-btn-bg-hover-color: #8f2727;
+  --tertiary-btn-bg-hover-color: #e55a2b;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  background-color: #175a4e;
+  font-family: var(--font-body);
 }

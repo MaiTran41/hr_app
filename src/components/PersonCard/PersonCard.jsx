@@ -1,0 +1,208 @@
+import styles from "./PersonCard.module.css";
+import { emojisMap } from "../../data/emojisMap";
+import { useState } from "react";
+import PersonCardField from "./PersonCardField/PersonCardField";
+
+const calculateWorkingYears = (startDateStr) => {
+  const today = new Date();
+
+  const startDate = new Date(startDateStr);
+  const workingYears = today.getFullYear() - startDate.getFullYear();
+
+  return workingYears;
+};
+
+function isWithinSixMonths(date1, date2) {
+  const d1 = new Date(date1);
+  const d2 = new Date(date2);
+
+  const [earlierDate, laterDate] = d1 <= d2 ? [d1, d2] : [d2, d1];
+
+  const sixMonthsLater = new Date(earlierDate);
+  sixMonthsLater.setMonth(earlierDate.getMonth() + 6);
+
+  return laterDate <= sixMonthsLater;
+}
+
+const shouldRenderRecognitionMsg = (startDate) => {
+  const workingYears = calculateWorkingYears(startDate);
+
+  return workingYears === 5 || workingYears === 10 || workingYears === 15;
+};
+const shouldRenderProbationMsg = (startDate) => {
+  const today = new Date();
+
+  return isWithinSixMonths(startDate, today);
+};
+
+const PersonCard = ({
+  id,
+  name,
+  title,
+  salary,
+  phone,
+  email,
+  animal,
+  startDate,
+  location,
+  department,
+  skills,
+  onFormSave,
+}) => {
+  const skillStr = skills.join(", ");
+
+  const [isEditing, setIsEditing] = useState(false);
+  const [newSalary, setNewSalary] = useState(salary);
+  const [newLocation, setNewLocation] = useState(location);
+  const [newDepartment, setNewDepartment] = useState(department);
+  const [newSkills, setNewSkills] = useState(skillStr);
+  const [saveStatus, setSaveStatus] = useState("idle");
+
+  const handleFormSave = async () => {
+    try {
+      await onFormSave({
+        id,
+        salary: parseFloat(newSalary),
+        location: newLocation,
+        department: newDepartment,
+        skills: newSkills.split(", "),
+      });
+
+      setIsEditing(!isEditing);
+
+      setSaveStatus("success");
+    } catch (err) {
+      setSaveStatus("failed");
+    } finally {
+      setTimeout(() => {
+        setSaveStatus("idle");
+      }, 3000);
+    }
+  };
+
+  const handleCancel = () => {
+    setNewSalary(salary);
+    setNewLocation(location);
+    setNewDepartment(department);
+    setNewSkills(skills);
+
+    setIsEditing(!isEditing);
+  };
+
+  return (
+    <div className={styles.personCardContainer}>
+      <div className={styles.cardHeaderContainer}>
+        <PersonCardField value={name} />
+
+        <img
+          src={`https://robohash.org/${name}?set=set3&size=90x90`}
+          alt={`Avatar of ${name}`}
+        />
+      </div>
+
+      <div className={styles.personCardWrapper}>
+        {shouldRenderRecognitionMsg(startDate) && (
+          <div
+            className={`${styles.alertContainer} ${styles.alertContainerSuccess}`}
+          >
+            <p>🎉 Schedule recognition meeting 🎉</p>
+          </div>
+        )}
+        {shouldRenderProbationMsg(startDate) && (
+          <div
+            className={`${styles.alertContainer} ${styles.alertContainerWarning}`}
+          >
+            <p>🔔 Schedule probation review 🔔</p>
+          </div>
+        )}
+
+        <PersonCardField label="Title" value={title} />
+
+        <PersonCardField
+          label="Salary"
+          value={`${salary}€`}
+          isEditing={isEditing}
+          editValue={newSalary}
+          onEditChange={setNewSalary}
+          inputType="number"
+        />
+
+        <PersonCardField label="Phone" value={phone} />
+
+        <PersonCardField label="Email" value={email} shouldUseWordBreakAll />
+
+        <PersonCardField
+          label="Animal"
+          value={emojisMap[animal.toLowerCase()]}
+        />
+
+        <PersonCardField label="Start Date" value={startDate} />
+
+        <PersonCardField
+          label="Location"
+          value={location}
+          isEditing={isEditing}
+          editValue={newLocation}
+          onEditChange={setNewLocation}
+        />
+
+        <PersonCardField
+          label="Department"
+          value={department}
+          isEditing={isEditing}
+          editValue={newDepartment}
+          onEditChange={setNewDepartment}
+        />
+
+        <PersonCardField
+          label="Skills"
+          value={skillStr}
+          isEditing={isEditing}
+          editValue={newSkills}
+          onEditChange={setNewSkills}
+          shouldUseTextArea
+        />
+
+        {saveStatus === "success" && (
+          <div className={`${styles.confirmMsg} ${styles.successMsg}`}>
+            <p>✓ Updated successfully! </p>
+
+            <p>Your changes has been saved.</p>
+          </div>
+        )}
+        {saveStatus === "failed" && (
+          <div className={`${styles.confirmMsg} ${styles.failedMsg}`}>
+            Failed to update! Please try again!
+          </div>
+        )}
+
+        <div className={styles.btnContainer}>
+          {isEditing ? (
+            <>
+              <button
+                className={`${styles.btn} ${styles.cancelBtn}`}
+                onClick={handleCancel}
+              >
+                Cancel
+              </button>
+              <button
+                className={`${styles.btn} ${styles.saveBtn}`}
+                onClick={handleFormSave}
+              >
+                Save
+              </button>
+            </>
+          ) : (
+            <button
+              className={`${styles.btn} ${styles.editBtn}`}
+              onClick={() => setIsEditing(!isEditing)}
+            >
+              Edit
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+export default PersonCard;

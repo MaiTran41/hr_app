@@ -1,0 +1,95 @@
+.personCardContainer {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 12px;
+  border-bottom: 30px solid #d6b87c;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.personCardWrapper {
+  padding: 1rem 1.5rem;
+}
+
+.alertContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  border-radius: 10px;
+  margin-bottom: 1.15rem;
+}
+.alertContainerSuccess {
+  background-color: #a5c9a5;
+  color: #1e4620;
+}
+.alertContainerWarning {
+  background-color: #e4e08d;
+  color: #434218;
+}
+
+.cardHeaderContainer {
+  background-color: #d6b87c;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  justify-content: space-around;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+}
+
+.confirmMsg {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 4px;
+}
+.successMsg {
+  border: 1px solid #a5c9a5;
+  color: #1e4620;
+}
+.failedMsg {
+  border: 1px solid #cd5252;
+  color: #cd5252;
+}
+
+.btnContainer {
+  padding-right: 20px;
+  padding-top: 16px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn {
+  font-family: var(--font-body);
+  background-color: var(--primary-btn-bg-color);
+  color: var(--primary-btn-text-color);
+  border: none;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 8px 20px;
+}
+
+.btn:hover {
+  transition: 0.3s all ease;
+  background-color: var(--primary-btn-bg-hover-color);
+}
+
+.cancelBtn {
+  background-color: var(--secondary-btn-bg-color);
+}
+
+.cancelBtn:hover {
+  background-color: var(--secondary-btn-bg-hover-color);
+}
+
+.saveBtn {
+  background-color: var(--primary-btn-bg-color);
+}

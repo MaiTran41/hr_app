@@ -1,0 +1,33 @@
+.footerContainer {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.navBarFooter {
+  display: flex;
+  flex-direction: column;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+.navLinks:hover {
+  color: #114239;
+  font-weight: 600;
+  transition: all 0.3s ease-in;
+}
+
+.navLinks.active {
+  text-decoration: underline dotted var(--primary-color) 2px;
+  text-underline-offset: 8px;
+  font-weight: 500;
+}

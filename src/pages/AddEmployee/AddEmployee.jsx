@@ -1,9 +1,8 @@
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import { useState } from "react";
-import "../components/Person/Person.css";
+import styles from "./AddEmployee.module.css";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import BackToTopBtn from "../../components/BackToTopBtn/BackToTopBtn";
 
 const AddEmployee = ({ onAddEmployee }) => {
   const [formData, setFormData] = useState({
@@ -23,9 +22,6 @@ const AddEmployee = ({ onAddEmployee }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    // since  'skills' input is a text input aka strings, we want it to be an array
-    // we need to use .split('') to turn inputs into an array
 
     const formattedValue = name === "skills" ? value.split(",") : value;
 
@@ -69,14 +65,12 @@ const AddEmployee = ({ onAddEmployee }) => {
 
   return (
     <>
-      <Header logo="Mai Tran" />
-      <form id="form-container" onSubmit={handleSubmit}>
-        <h1>Add Employee Form</h1>
-
-        <div id="form-input-container">
-          <div className="form-inputs-wrapper">
-            <div className="form-inputs">
-              <div className="label-wrapper">
+      <form className={styles.formContainer} onSubmit={handleSubmit}>
+        <div className={styles.formInputContainer}>
+          <h1>Add Employee Form</h1>
+          <div className={styles.formInputsWrapper}>
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="name">Name</label>
               </div>
               <input
@@ -88,8 +82,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="title">Title</label>
               </div>
               <input
@@ -101,8 +95,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="salary">Salary</label>
               </div>
               <input
@@ -114,8 +108,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="phone">Phone</label>
               </div>
               <input
@@ -127,8 +121,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="email">Email</label>
               </div>
               <input
@@ -140,8 +134,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="animal">Animal</label>
               </div>
               <input
@@ -153,8 +147,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="">Start Date</label>
               </div>
               <input
@@ -166,8 +160,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="location">Location</label>
               </div>
               <input
@@ -179,8 +173,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="department">Department</label>
               </div>
               <input
@@ -192,8 +186,8 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
 
-            <div className="form-inputs">
-              <div className="label-wrapper">
+            <div className={styles.formInputs}>
+              <div className={styles.labelWrapper}>
                 <label htmlFor="skills">Skills</label>
               </div>
               <input
@@ -205,10 +199,11 @@ const AddEmployee = ({ onAddEmployee }) => {
               />
             </div>
           </div>
-          <button id="add-employee-btn">Add</button>
+          <button className={styles.addBtn}>Add</button>
         </div>
       </form>
-      <Footer year={2025} />
+
+      <BackToTopBtn showAfter={200} />
     </>
   );
 };

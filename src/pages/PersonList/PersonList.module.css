@@ -1,0 +1,53 @@
+.heading {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+}
+
+.employeeListContainer {
+  background-color: var(--primary-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.employeeListWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  color: white;
+  gap: 16px;
+}
+
+.searchContainer label {
+  font-size: 1.25rem;
+}
+
+.searchContainer input {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--primary-color);
+  padding-left: 8px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+}
+
+.searchMessage {
+  background-color: #a5c9a5;
+  color: #1e4620;
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
+}
