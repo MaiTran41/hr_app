@@ -11,10 +11,7 @@
       "startDate": "2018-04-01",
       "location": "Helsinki",
       "department": "Human Resources",
-      "skills": [
-        "Recruiting",
-        "Communication"
-      ]
+      "skills": ["Recruiting", "Communication"]
     },
     {
       "id": "2",
@@ -27,12 +24,7 @@
       "startDate": "2024-12-15",
       "location": "Tampere",
       "department": "Engineering",
-      "skills": [
-        "JavaScript",
-        "React",
-        "Node.js",
-        "CSS"
-      ]
+      "skills": ["JavaScript", "React", "Node.js", "CSS"]
     },
     {
       "id": "3",
@@ -45,11 +37,7 @@
       "startDate": "2020-01-10",
       "location": "Turku",
       "department": "Marketing",
-      "skills": [
-        "Social Media",
-        "Content Creation",
-        "SEO"
-      ]
+      "skills": ["Social Media", "Content Creation", "SEO"]
     },
     {
       "id": "4",
@@ -62,11 +50,7 @@
       "startDate": "2025-01-04",
       "location": "Helsinki",
       "department": "Finance",
-      "skills": [
-        "Financial Modeling",
-        "Data Analysis",
-        "Reporting"
-      ]
+      "skills": ["Financial Modeling", "Data Analysis", "Reporting"]
     },
     {
       "id": "5",
@@ -79,11 +63,7 @@
       "startDate": "2021-03-08",
       "location": "Espoo",
       "department": "Design",
-      "skills": [
-        "UI Design",
-        "Prototyping",
-        "Figma"
-      ]
+      "skills": ["UI Design", "Prototyping", "Figma"]
     },
     {
       "id": "6",
@@ -96,10 +76,7 @@
       "startDate": "2016-11-14",
       "location": "Vantaa",
       "department": "Operations",
-      "skills": [
-        "Project Planning",
-        "Team Leadership"
-      ]
+      "skills": ["Project Planning", "Team Leadership"]
     },
     {
       "id": "7",
@@ -112,10 +89,7 @@
       "startDate": "2022-01-17",
       "location": "Oulu",
       "department": "Customer Service",
-      "skills": [
-        "Problem Solving",
-        "Communication"
-      ]
+      "skills": ["Problem Solving", "Communication"]
     },
     {
       "id": "8",
@@ -128,11 +102,7 @@
       "startDate": "2015-07-03",
       "location": "Tampere",
       "department": "Engineering",
-      "skills": [
-        "Python",
-        "AWS",
-        "System Architecture"
-      ]
+      "skills": ["Python", "AWS", "System Architecture"]
     },
     {
       "id": "9",
@@ -145,11 +115,7 @@
       "startDate": "2020-09-01",
       "location": "Jyväskylä",
       "department": "Sales",
-      "skills": [
-        "Negotiation",
-        "CRM",
-        "Presentation"
-      ]
+      "skills": ["Negotiation", "CRM", "Presentation"]
     },
     {
       "id": "10",
@@ -162,11 +128,7 @@
       "startDate": "2019-04-15",
       "location": "Helsinki",
       "department": "IT",
-      "skills": [
-        "Networking",
-        "Windows",
-        "Linux"
-      ]
+      "skills": ["Networking", "Windows", "Linux"]
     },
     {
       "id": "35e4",
@@ -179,12 +141,7 @@
       "startDate": "2025-04-30",
       "location": "ESPOO",
       "department": "IT",
-      "skills": [
-        "HTML",
-        " React",
-        " JS",
-        " CSS"
-      ]
+      "skills": ["HTML", " React", " JS", " CSS"]
     }
   ]
 }

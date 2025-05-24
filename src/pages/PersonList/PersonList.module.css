@@ -46,7 +46,7 @@
 
 .searchMessage {
   background-color: #a5c9a5;
-  color: var(--failed-msg-text-color);
+  color: var(--primary-color);
   border-radius: 8px;
   padding: 8px;
   border: none;
