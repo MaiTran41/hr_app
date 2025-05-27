@@ -6,7 +6,7 @@ export const useEmployeesData = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/employees")
+      .get("https://hr-app-backend-api.onrender.com/employees")
       .then((res) => {
         setEmployeesData(res.data);
       })
@@ -15,7 +15,7 @@ export const useEmployeesData = () => {
 
   const addEmployeeHandler = async (newEmployee) => {
     const res = await axios.post(
-      "http://localhost:3001/employees",
+      "https://hr-app-backend-api.onrender.com/employees",
       newEmployee
     );
 
@@ -29,12 +29,15 @@ export const useEmployeesData = () => {
     department,
     skills,
   }) => {
-    const res = await axios.patch(`http://localhost:3001/employees/${id}`, {
-      salary,
-      location,
-      department,
-      skills,
-    });
+    const res = await axios.patch(
+      `https://hr-app-backend-api.onrender.com/employees/${id}`,
+      {
+        salary,
+        location,
+        department,
+        skills,
+      }
+    );
 
     setEmployeesData((prev) =>
       prev.map((employee) =>
