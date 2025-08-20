@@ -33,5 +33,3 @@ A modern React application designed to simplify employee management for HR teams
 - JSON Server
 - JSONPlaceholder public test API
 - Basic CSS
-
-Some minor changes hihi

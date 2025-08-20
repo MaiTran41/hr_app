@@ -6,7 +6,7 @@ const About = () => {
     <>
       <main className={styles.aboutContainer}>
         <div className={styles.aboutWrapper}>
-          <h1 className={styles.heading}>Human Resource Application Testing</h1>
+          <h1 className={styles.heading}>Human Resource Application</h1>
           <p className={styles.description}>
             A modern React application designed to simplify employee management
             for HR teams. The system tracks key employee information and
